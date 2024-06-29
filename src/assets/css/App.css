@@ -1,0 +1,47 @@
+.App {
+    text-align: center;
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    padding: 20px;
+    color: white;
+  }
+  
+  .App-footer {
+    background-color: #282c34;
+    padding: 10px;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
+  
+
+  /* 기본 링크 스타일 */
+a {
+  color: inherit; /* 부모 요소의 색상을 상속 */
+  text-decoration: none; /* 밑줄 제거 */
+  margin-right: 10px; /* 각 링크 사이에 10px 간격 추가 */
+}
+
+/* 방문하지 않은 링크 */
+a:link {
+  color: inherit; /* 부모 요소의 색상을 상속 */
+}
+
+/* 방문한 링크 */
+a:visited {
+  color: inherit; /* 부모 요소의 색상을 상속 */
+}
+
+/* 마우스를 올렸을 때 */
+a:hover {
+  color: inherit; /* 부모 요소의 색상을 상속 */
+  text-decoration: underline; /* 원하면 밑줄 추가 */
+}
+
+/* 클릭했을 때 */
+a:active {
+  color: inherit; /* 부모 요소의 색상을 상속 */
+}
