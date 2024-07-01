@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react';
-import { jwtDecode } from 'jwt-decode';
+import {jwtDecode} from 'jwt-decode';  // 이 부분을 수정합니다.
+import axios from 'axios';
 import { login as loginService, register as registerService } from '../services/authService';
 
 const AuthContext = createContext();
@@ -8,10 +9,26 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
+    const fetchToken = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/api/auth/token', { withCredentials: true });
+        const { token } = response.data;
+        if (token) {
+          localStorage.setItem('token', token);
+          const decodedToken = jwtDecode(token);
+          setUser(decodedToken);
+        }
+      } catch (error) {
+        console.error('Error fetching token:', error);
+      }
+    };
+
     const token = localStorage.getItem('token');
     if (token) {
       const decodedToken = jwtDecode(token);
       setUser(decodedToken);
+    } else {
+      fetchToken();
     }
   }, []);
 

@@ -19,6 +19,10 @@ function Login() {
     }
   };
 
+  const handleGoogleLogin = () => {
+    window.location.href = 'http://localhost:5000/api/auth/google';
+  };
+
   return (
     <div className="login-container">
       <h2>Login</h2>
@@ -43,6 +47,7 @@ function Login() {
         </div>
         <button type="submit">Login</button>
       </form>
+      <button onClick={handleGoogleLogin} className="google-login-button">Login with Google</button>
     </div>
   );
 }

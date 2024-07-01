@@ -8,10 +8,10 @@ function Header() {
 
   return (
     <header className="App-header">
-      <h1>Welcome to My Mobile App</h1>
+      <h1>PoSn</h1>
       <nav>
-        <Link to="/">Home</Link>
-        <Link to="/posts">Posts</Link>
+        <Link to="/">Main</Link>
+        <Link to="/posts">Spoon</Link>
         {user && <Link to="/about">About</Link>}
         {!user ? (
           <>

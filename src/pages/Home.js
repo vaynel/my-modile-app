@@ -16,7 +16,7 @@ function Home() {
 
   return (
     <div>
-      <h1>Home Page</h1>
+      <h1>PopSpoon</h1>
       <ul>
         {data.map(item => (
           <li key={item._id}>{item.name}</li>
